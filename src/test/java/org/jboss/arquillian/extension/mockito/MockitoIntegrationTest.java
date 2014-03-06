@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Spy;
+import static org.mockito.Mockito.*;
 
 @RunWith(Arquillian.class)
 public class MockitoIntegrationTest {
@@ -35,11 +36,11 @@ public class MockitoIntegrationTest {
 	
 	@Test
 	public void testFoo() {
-		//reset(barResource);
-		//when(barResource.getText()).thenReturn("hello world");
+		reset(barResource);
+	when(barResource.getText()).thenReturn("hello world");
 		fooService.execute();
 		
-		//verify(barResource).getText();
+		verify(barResource).getText();
 		
 	}
 
