@@ -1,10 +1,8 @@
 package org.jboss.arquillian.extension.mockito;
 
-import static org.junit.Assert.*;
-
 import javax.inject.Inject;
 
-import org.jboss.arquillian.api.Deployment;
+import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
@@ -13,8 +11,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Spy;
-
-import static org.mockito.Mockito.*;
 
 @RunWith(Arquillian.class)
 public class MockitoIntegrationTest {

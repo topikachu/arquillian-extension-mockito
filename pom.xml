@@ -6,9 +6,9 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<properties>
 		<version.mockito_all>1.9.5</version.mockito_all>
-		<version.arquillian>1.1.2.Final</version.arquillian>
-		<version.arquillian-weld-ee>1.1.2.AS7</version.arquillian-weld-ee>
-		<version.junit>4.10</version.junit>
+		<version.arquillian>1.1.3.Final</version.arquillian>
+		<version.arquillian-weld-ee>1.1.2.Final</version.arquillian-weld-ee>
+		<version.junit>4.8.1</version.junit>
 		<version.javaee6.spec>3.0.2.Final</version.javaee6.spec>
 	</properties>
 
@@ -85,7 +85,24 @@
 			<scope>test</scope>
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+			<version>1.0.0.CR8</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core</artifactId>
+			<version>1.1.8.Final</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.6.4</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -126,35 +143,11 @@
 		</profile>
 
 		<profile>
-			<id>arquillian-weld-ee-embedded</id>
+			<id>weld-ee-embedded-1.1</id>
 			<dependencies>
-				<dependency>
-					<groupId>org.jboss.weld.arquillian.container</groupId>
-					<artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-					<scope>test</scope>
-				</dependency>
-				
-				 <dependency>
-                    <groupId>org.jboss.spec</groupId>
-                    <artifactId>jboss-javaee-6.0</artifactId>
-                    <version>1.0.0.Final</version>
-                    <type>pom</type>
-                    <scope>provided</scope>
-                </dependency>
-        
-                <dependency>
-                    <groupId>org.jboss.weld</groupId>
-                    <artifactId>weld-core</artifactId>
-                    <version>1.1.9.Final</version>
-                    <scope>test</scope>
-                </dependency>
-                <dependency>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                    <version>1.6.4</version>
-                    <scope>test</scope>
-                </dependency>
+
 			</dependencies>
+
 		</profile>
 	</profiles>
 </project>
