@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jboss.arquillian.extension</groupId>
+	<artifactId>arquillian-mockito</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<properties>
+		<version.mockito_all>1.9.5</version.mockito_all>
+		<version.arquillian>1.1.2.Final</version.arquillian>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${version.mockito_all}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.arquillian.test</groupId>
+				<artifactId>arquillian-test-spi</artifactId>
+				<version>${version.arquillian}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jboss.arquillian.container</groupId>
+				<artifactId>arquillian-container-test-spi</artifactId>
+				<version>${version.arquillian}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.enterprise</groupId>
+				<artifactId>cdi-api</artifactId>
+				<version>1.0</version>
+				<scope>provided</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.test</groupId>
+			<artifactId>arquillian-test-spi</artifactId>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.arquillian.container</groupId>
+			<artifactId>arquillian-container-test-spi</artifactId>
+
+		</dependency>
+	</dependencies>
+	
+	<build>
+	<plugins>
+		<plugin>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.6</source>
+                <target>1.6</target>
+            </configuration>
+        </plugin>
+	
+	</plugins>
+	
+	</build>
+</project>

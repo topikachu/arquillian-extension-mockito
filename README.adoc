@@ -1,0 +1,66 @@
+= Arquillian Mockito
+
+The Arquillian Mockito provides a simple way to bring https://github.com/mockito/mockito[Mockito] into the Arquillian framework.
+
+== Getting Started
+
+The following example illustrates how Arquillian Mockito can be used:
+
+[source,java]
+----
+@RunWith(Arquillian.class)
+public class ServiceTest {
+ 
+    /**
+     * Creates a testing WAR application
+     *
+     * @return WebArchive to be tested
+     */
+    @Deployment
+    public static WebArchive createDeployment() {
+        return Deployments.createDeployment();
+    }
+    
+    //Inject the spyed resource
+    @Inject @Spy
+    private SomeInjected spyedResource; 
+    
+    @Before
+    public void beforeTest(){
+        reset(spyedResource);
+    }
+    
+    
+    @Test
+    public void testMethod() {
+        when(spyedResource.executeMethod()).thenReturn(someObject);
+        //execute real method
+    }
+
+}
+----
+
+You need to put following configuration to the pom.xml file of your project:
+
+[source,xml]
+----
+<dependencies>
+  <!-- To use Arquillian Mockito -->
+  <dependency>
+    <groupId>org.jboss.arquillian.extension</groupId>
+    <artifactId>arquillian-mockito</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+----
+
+NOTE: You need to take care the CDI bean scope. Make sure the bean injected in the test is the same one used in the application application.
+
+== Building the project
+
+Prerequisites:
+
+* JDK 6 and newer
+* Maven 3.0.3 and newer
+
