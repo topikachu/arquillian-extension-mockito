@@ -8,7 +8,6 @@ import org.jboss.arquillian.extension.mockito.ftest.FooService;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.Resolvers;
 import org.jboss.shrinkwrap.resolver.api.maven.MavenResolverSystem;
@@ -47,12 +46,11 @@ public class MockitoIntegrationTest {
 
 	@Before
 	public void beforeTest() {
-
+		reset(barResource);
 	}
 
 	@Test
-	public void testFoo() {
-		reset(barResource);
+	public void testFoo() {		
 		when(barResource.getText()).thenReturn("hello world");
 		fooService.execute();
 		verify(barResource).getText();

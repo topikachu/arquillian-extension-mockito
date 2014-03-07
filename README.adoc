@@ -55,12 +55,12 @@ You need to put following configuration to the pom.xml file of your project:
 </dependencies>
 ----
 
-NOTE: You need to take care the CDI bean scope. Make sure the bean injected in the test is the same one used in the application application.
+NOTE: You need to take care the CDI bean scope. Make sure the bean injected in the test is the same one used in the application.
 
 == Building the project
 
 Prerequisites:
 
-* JDK 6 and newer
+* JDK 5 and newer
 * Maven 3.0.3 and newer
 
