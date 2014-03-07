@@ -1,4 +1,4 @@
-package org.jboss.arquillian.extension.mockito;
+package org.jboss.arquillian.extension.mockito.ftest;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
