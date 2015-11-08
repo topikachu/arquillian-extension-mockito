@@ -14,7 +14,7 @@ public class MockitoArchiveAppender extends CachedAuxilliaryArchiveAppender {
 		 JavaArchive archive = ShrinkWrap.create(JavaArchive.class, "arquillian-mockito.jar")
                  .addPackages(
                        true, 
-                       "org.mokito", 
+                       "org.mockito", 
                        "org.objenesis",
                        CDIExtension.class.getPackage().getName()
                       )
